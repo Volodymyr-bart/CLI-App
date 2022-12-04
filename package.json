@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/Volodymyr-bart/CLI-App.git"
   },
   "keywords": [],
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Volodymyr-bart/CLI-App/issues"
   },
-  "homepage": "https://github.com/Volodymyr-bart/CLI-App#readme"
+  "homepage": "https://github.com/Volodymyr-bart/CLI-App#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
