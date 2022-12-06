@@ -1,28 +1,47 @@
 const path = require("path");
-const fs = require("fs");
+const fs = require("fs").promises;
 const contactsPath = path.resolve("./db/contacts.json");
 
-fs.readFile(contactsPath, "utf-8", (error, data) => {
-  if (error) {
-    console.log(error);
-  }
-  console.log(data);
-});
 // fs.writeFile()
 
 // TODO: задокументувати кожну функцію
-function listContacts() {
-  // ...твій код
+async function listContacts() {
+  try {
+    const data = await fs.readFile(contactsPath, "utf-8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function getContactById(contactId) {
-  // ...твій код
+async function getContactById(contactId) {
+  try {
+    const contacts = await listContacts();
+    const result = contacts.find((contact) => contact.id === contactId);
+    console.log(result);
+    // return JSON.parse(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function removeContact(contactId) {
-  // ...твій код
+async function removeContact(contactId) {
+  try {
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function addContact(name, email, phone) {
-  // ...твій код
+async function addContact(name, email, phone) {
+  try {
+  } catch (error) {
+    console.log(error);
+  }
 }
+
+module.exports = {
+  listContacts,
+  getContactById,
+  removeContact,
+  addContact,
+};
