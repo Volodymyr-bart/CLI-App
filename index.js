@@ -15,23 +15,26 @@ program.parse(process.argv);
 
 const argv = require("yargs").argv;
 
-// TODO: рефакторить
-function invokeAction({ action, id, name, email, phone }) {
+async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      // ...
+      const contactsList = await contacts.listContacts();
+      console.log(contactsList);
       break;
 
     case "get":
-      // ... id
+      const oneContact = await contacts.getContactById(id);
+      console.log(oneContact);
       break;
 
     case "add":
-      // ... name email phone
+      const addContact = await contacts.addContact({ name, email, phone });
+      console.log(addContact);
       break;
 
     case "remove":
-      // ... id
+      const deleteContact = await contacts.removeContact(id);
+      console.log(deleteContact);
       break;
 
     default:
