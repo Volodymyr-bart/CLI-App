@@ -18,7 +18,7 @@ async function getContactById(contactId) {
     if (!result) {
       return null;
     }
-    return JSON.parse(result);
+    return result;
   } catch (error) {
     console.log(error);
   }
