@@ -42,7 +42,7 @@ async function removeContact(contactId) {
   }
 }
 
-async function addContact(name, email, phone) {
+async function addContact({ name, email, phone }) {
   try {
     const contacts = await listContacts();
     const id = (contacts.length + 1).toString();

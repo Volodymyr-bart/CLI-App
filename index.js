@@ -38,5 +38,3 @@ program
 program.parse();
 const options = program.opts();
 invokeAction(options);
-
-console.log(options);
